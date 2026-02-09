@@ -1,6 +1,6 @@
 # 🐾 Таксы – Удивительные Создания
 
-![Такса в поле](https://images.unsplash.com/photo-1590419690005-1dcc73c15ce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+![Такса](https://img.freepik.com/premium-photo/dachshund-stands-front-white-background_559025-286.jpg?semt=ais_hybrid&w=740)
 *Фото: Unsplash*
 
 ## ✨ Особенности породы
