@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таксы – Удивительные Создания</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fefaf6;
+            color: #5a3e2b;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #8b4513 0%, #d2691e 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "🐾";
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.1;
+            top: 50px;
+            right: 100px;
+            transform: rotate(20deg);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Hero Image */
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 8px solid white;
+        }
+        
+        /* Sections */
+        section {
+            margin: 60px 0;
+            padding: 40px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+        }
+        
+        h2 {
+            color: #8b4513;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f4a460;
+            display: inline-block;
+        }
+        
+        h3 {
+            color: #a0522d;
+            margin: 25px 0 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: #fff8f0;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #d2691e;
+        }
+        
+        .feature-card i {
+            font-size: 2rem;
+            color: #d2691e;
+            margin-bottom: 15px;
+        }
+        
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        th {
+            background-color: #8b4513;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #f4a460;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fff8f0;
+        }
+        
+        /* Quote */
+        .quote {
+            background: linear-gradient(to right, #f4a460, #d2691e);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .quote::before, .quote::after {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.3);
+            position: absolute;
+        }
+        
+        .quote::before {
+            top: 10px;
+            left: 20px;
+        }
+        
+        .quote::after {
+            bottom: 10px;
+            right: 20px;
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .gallery-caption {
+            padding: 15px;
+            background-color: white;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        /* Facts */
+        .facts-list {
+            list-style-type: none;
+        }
+        
+        .facts-list li {
+            padding: 15px;
+            background-color: #fff8f0;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .facts-list li i {
+            color: #d2691e;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* Care info */
+        .care-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .care-item {
+            flex: 1;
+            min-width: 300px;
+            background: #fff8f0;
+            padding: 25px;
+            border-radius: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #8b4513;
+            color: white;
+            margin-top: 60px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+        
+        .heart {
+            color: #ff6b6b;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 25px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-paw"></i> Таксы – Удивительные Создания</h1>
+            <p class="subtitle">Узнайте всё о самой очаровательной и характерной породе собак</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1590419690005-1dcc73c15ce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Такса в поле" class="hero-image">
+        <p style="text-align: center; font-style: italic; margin-bottom: 40px;">Фото: Unsplash</p>
+        
+        <section>
+            <h2><i class="fas fa-star"></i> Особенности породы</h2>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Характер</h3>
+                    <p>Таксы – умные и сообразительные собаки, преданные компаньоны. Они энергичны, игривы, независимы, но при этом очень любящие своих хозяев.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h3>Разновидности</h3>
+                    <p>Существует три основных типа такс: стандартная, миниатюрная и кроличья. Они различаются не только размерами, но и окрасами.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-history"></i>
+                    <h3>Историческая роль</h3>
+                    <p>Таксы были выведены в Германии для охоты на барсуков. Их уникальное строение тела позволяло им проникать в норы!</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2><i class="fas fa-table"></i> Разновидности такс</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Тип</th>
+                        <th>Размер</th>
+                        <th>Окрас</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Стандартная</td>
+                        <td>7-9 кг</td>
+                        <td>Рыжий, черный, мраморный</td>
+                    </tr>
+                    <tr>
+                        <td>Миниатюрная</td>
+                        <td>4-5.5 кг</td>
+                        <td>Коричневый, шоколадный</td>
+                    </tr>
+                    <tr>
+                        <td>Кроличья</td>
+                        <td>до 3.5 кг</td>
+                        <td>Палевый, тигровый</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <div class="quote">
+            Таксы были выведены в Германии для охоты на барсуков. Их название происходит от немецкого "Dachshund" – "барсучья собака". Уникальное строение тела позволяло им проникать в норы!
+        </div>
+        
+        <section>
+            <h2><i class="fas fa-heart"></i> Почему их любят?</h2>
+            <ul class="facts-list">
+                <li><i class="fas fa-check-circle"></i> <strong>Компактный размер</strong> – идеально подходят для жизни в квартире</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Яркая внешность</strong> – узнаваемы с первого взгляда</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Долгожители</strong> – живут 12-16 лет при правильном уходе</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Отличные охранники</strong> – бдительны и бесстрашны, несмотря на размер</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Весёлый характер</strong> – всегда поднимут настроение</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2><i class="fas fa-images"></i> Галерея такс</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&h=300&fit=crop" alt="Игривая такса" class="gallery-img">
+                    <div class="gallery-caption">Игривый характер</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?w=400&h=300&fit=crop" alt="Такса щенок" class="gallery-img">
+                    <div class="gallery-caption">Милый щенок таксы</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=400&h=300&fit=crop" alt="Такса осень" class="gallery-img">
+                    <div class="gallery-caption">Осенняя прогулка</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2><i class="fas fa-dog"></i> Уход и содержание</h2>
+            
+            <div class="care-info">
+                <div class="care-item">
+                    <h3><i class="fas fa-clipboard-check"></i> Что нужно знать</h3>
+                    <ul class="facts-list" style="background: transparent;">
+                        <li><i class="fas fa-walking"></i> <strong>Прогулки:</strong> Активные, но не слишком длинные</li>
+                        <li><i class="fas fa-utensils"></i> <strong>Питание:</strong> Сбалансированное, контроль веса</li>
+                        <li><i class="fas fa-heartbeat"></i> <strong>Здоровье:</strong> Особое внимание к позвоночнику</li>
+                        <li><i class="fas fa-graduation-cap"></i> <strong>Дрессировка:</strong> Последовательная и терпеливая</li>
+                    </ul>
+                </div>
+                
+                <div class="care-item">
+                    <h3><i class="fas fa-user-friends"></i> Идеальный хозяин</h3>
+                    <ul class="facts-list" style="background: transparent;">
+                        <li><i class="fas fa-hiking"></i> Любит активный отдых</li>
+                        <li><i class="fas fa-clock"></i> Готов уделять время воспитанию</li>
+                        <li><i class="fas fa-laugh"></i> Ценит чувство юмора (таксы часто смешат!)</li>
+                        <li><i class="fas fa-book-reader"></i> Понимает особенности породы</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <div class="quote" style="background: linear-gradient(to right, #8b4513, #a0522d);">
+            <h3 style="color: white; border-bottom: none; margin-bottom: 15px;">«Такса – это не просто собака, это стиль жизни!»</h3>
+            <p style="font-size: 1.8rem; margin-top: 10px;">🐶 Любите такс? Они того стоят! 🐶</p>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.5rem; margin-bottom: 20px;">Страница создана с <span class="heart"><i class="fas fa-heart"></i></span> к таксам</p>
+            <p><i class="fas fa-camera"></i> Источники фото: Unsplash</p>
+            <p style="margin-top: 20px; opacity: 0.8;">© 2023 Таксы – Удивительные Создания. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
